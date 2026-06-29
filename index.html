@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Psychic Reading | Tarot Reading | Love Psychic | Relationship Psychic – Psychic Norfolk offers expert psychic readings in Norfolk, VA. Call 757-257-3053 today." />
+  <title>Psychic Norfolk | Psychic Reading in Norfolk, VA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --deep: #0d0221;
+      --purple: #3b0764;
+      --violet: #6d28d9;
+      --gold: #f59e0b;
+      --light-gold: #fde68a;
+      --text: #e9d5ff;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: var(--deep);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      background: rgba(13,2,33,0.95);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 40px;
+      border-bottom: 1px solid #3b0764;
+      backdrop-filter: blur(8px);
+    }
+    nav img.logo {
+      height: 52px;
+      object-fit: contain;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+    }
+    nav ul a {
+      color: var(--light-gold);
+      text-decoration: none;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    nav ul a:hover { color: var(--white); }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero img.hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.35;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(13,2,33,0.6) 0%, rgba(59,7,100,0.7) 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+      padding: 40px 24px;
+    }
+    .hero-content h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: var(--white);
+      line-height: 1.25;
+      margin-bottom: 18px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+    }
+    .hero-content h1 span { color: var(--gold); }
+    .hero-content p {
+      font-size: 1.1rem;
+      color: var(--light-gold);
+      margin-bottom: 28px;
+    }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold), #d97706);
+      color: #0d0221;
+      padding: 14px 34px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: bold;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(245,158,11,0.4);
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(245,158,11,0.5); }
+
+    /* SECTIONS */
+    section { padding: 70px 24px; }
+    .container { max-width: 1060px; margin: 0 auto; }
+    h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      color: var(--gold);
+      text-align: center;
+      margin-bottom: 14px;
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--light-gold);
+      margin-bottom: 48px;
+      font-size: 1.05rem;
+    }
+    .divider {
+      width: 70px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--violet), var(--gold));
+      margin: 12px auto 36px;
+      border-radius: 2px;
+    }
+
+    /* SERVICES */
+    #services { background: linear-gradient(180deg, #0d0221 0%, #1a0538 100%); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+    .service-card {
+      background: rgba(59,7,100,0.45);
+      border: 1px solid rgba(109,40,217,0.4);
+      border-radius: 14px;
+      padding: 30px 24px;
+      text-align: center;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .service-card:hover { transform: translateY(-4px); border-color: var(--gold); }
+    .service-card .icon { font-size: 2.4rem; margin-bottom: 14px; }
+    .service-card h3 { color: var(--white); font-size: 1.15rem; margin-bottom: 10px; }
+    .service-card p { color: #c4b5fd; font-size: 0.93rem; }
+
+    /* WHY CHOOSE */
+    #why { background: #110230; }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+    }
+    .why-card {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: rgba(109,40,217,0.12);
+      border-left: 3px solid var(--gold);
+      border-radius: 10px;
+      padding: 22px 20px;
+    }
+    .why-card .icon { font-size: 1.8rem; flex-shrink: 0; }
+    .why-card h3 { color: var(--light-gold); font-size: 1rem; margin-bottom: 6px; }
+    .why-card p { color: #c4b5fd; font-size: 0.9rem; }
+
+    /* WHY PSYCHIC READING SECTION */
+    #why-reading { background: linear-gradient(180deg, #1a0538 0%, #0d0221 100%); }
+    .why-reading-inner {
+      background: rgba(59,7,100,0.3);
+      border: 1px solid rgba(109,40,217,0.35);
+      border-radius: 16px;
+      padding: 44px 36px;
+    }
+    .why-reading-inner p { color: #ddd6fe; margin-bottom: 16px; }
+    .why-reading-inner ul { padding-left: 22px; }
+    .why-reading-inner ul li { color: #c4b5fd; margin-bottom: 10px; }
+    .why-reading-inner ul li strong { color: var(--light-gold); }
+    .blog-cta {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    /* CONTACT */
+    #contact { background: #0d0221; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    @media(max-width:680px){ .contact-grid { grid-template-columns: 1fr; } }
+    .contact-info { }
+    .contact-info h3 { color: var(--gold); font-size: 1.3rem; margin-bottom: 20px; }
+    .contact-row {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+    .contact-row .icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+    .contact-row a { color: var(--light-gold); text-decoration: none; }
+    .contact-row a:hover { color: var(--white); }
+    .contact-row p, .contact-row span { color: #ddd6fe; font-size: 0.97rem; }
+    .map-wrapper { border-radius: 14px; overflow: hidden; border: 2px solid rgba(109,40,217,0.5); }
+    .map-wrapper iframe { display: block; width: 100%; height: 340px; }
+
+    /* FOOTER */
+    footer {
+      background: #07010f;
+      text-align: center;
+      padding: 28px 20px;
+      color: #7c3aed;
+      font-size: 0.88rem;
+      border-top: 1px solid #3b0764;
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* Stars decoration */
+    .stars { letter-spacing: 4px; color: var(--gold); font-size: 1.1rem; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <img class="logo" src="https://lh3.googleusercontent.com/sitesv/AA5AbUCZHeVtMoJLNU-iYmaDifqwz3xXjEpvLC5dlHNIWqu1xnVtNLIENWZf9LWk1-BgDbFt8ajDB0DT27yu-py-zBwBYOiNHrm2HDrs6F3jbegVSAmo7OL_L_sRvxy_q7as5M_7CGucEWg3FAnTFGV3dGonurFe3zqk2epR7JzGJGLn1ZX8vRH9y0h6GfhruGg=w16383" alt="Psychic Norfolk Logo" />
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#why-reading">Psychic Reading</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-bg" src="https://www.psychicsource.com/root_images/ps/images/landing-pages/sliding-scale-reveal/seasons/seasons-hero-03-md.webp" alt="Psychic Reading Norfolk VA" />
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="stars">✦ ✦ ✦</p>
+    <h1>Expert <span>Psychic Reading</span> in Norfolk, VA</h1>
+    <p>Seek clarity, guidance, and insight with Norfolk's most trusted psychic. Tarot Readings, Love Readings, and Relationship Guidance — all in one place.</p>
+    <a href="tel:7572573053" class="btn">📞 Call Now: 757-257-3053</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <h2>Our Services</h2>
+    <div class="divider"></div>
+    <p class="section-sub">Psychic Norfolk offers a full range of spiritual reading services to help you find answers, clarity, and peace of mind.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="icon">🔮</div>
+        <h3>Psychic Reading</h3>
+        <p>Our expert <a href="http://callpsychicnow.com/"style="color: white;"> psychic readers</a> tap into your energy to reveal insights about your past, present, and future. Whether you're facing life's crossroads or seeking deeper self-understanding, a psychic reading in Norfolk offers the clarity you need.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">🃏</div>
+        <h3>Tarot Reading</h3>
+        <p>Using the ancient wisdom of the tarot, our skilled readers interpret the cards to shed light on your life's journey, helping you navigate challenges and embrace opportunities ahead.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">💖</div>
+        <h3>Love Psychic</h3>
+        <p>Struggling with matters of the heart? Our love psychics provide compassionate, honest readings to help you understand your romantic path — whether you're searching for love or nurturing an existing relationship.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">💑</div>
+        <h3>Relationship Psychic</h3>
+        <p>Our relationship <a href="https://www.google.com/maps?cid=16881233408042557387"style="color: white;">psychic readings</a> dive deep into the dynamics of your personal connections. Gain a clearer understanding of your partner, family, or friends and take steps toward stronger, more fulfilling relationships.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section id="why">
+  <div class="container">
+    <h2>Why Choose Psychic Norfolk?</h2>
+    <div class="divider"></div>
+    <p class="section-sub">We are Norfolk's most trusted destination for genuine, compassionate psychic guidance. Here's what sets us apart:</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="icon">🌟</div>
+        <div>
+          <h3>Experienced & Gifted Readers</h3>
+          <p>Our psychics have years of experience delivering accurate, meaningful readings. Each reader is carefully vetted for their natural gifts and dedication to their craft.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="icon">🤝</div>
+        <div>
+          <h3>Compassionate & Confidential</h3>
+          <p>Your privacy matters. All <a href="http://callpsychicnow.com/"style="color: white;">readings at Psychic</a> Norfolk are conducted with the utmost respect and confidentiality, creating a safe space for you to open up freely.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="icon">🎯</div>
+        <div>
+          <h3>Personalized Guidance</h3>
+          <p>No two readings are alike. We tailor every psychic reading, tarot reading, or relationship session to your unique situation, ensuring insights that truly resonate.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="icon">📍</div>
+        <div>
+          <h3>Conveniently Located in Norfolk</h3>
+          <p>Easily accessible at 440 Monticello Ave, Norfolk, VA — right in the heart of the community. Walk-ins welcome and phone consultations available.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="icon">⭐</div>
+        <div>
+          <h3>Trusted by the Norfolk Community</h3>
+          <p>With a strong reputation built on honest readings and real results, Psychic Norfolk has become the go-to spiritual resource for residents across Hampton Roads.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="icon">📞</div>
+        <div>
+          <h3>Available When You Need Us</h3>
+          <p>Life doesn't wait — and neither should your guidance. Reach us by phone at <a href="tel:7572573053" style="color:var(--light-gold);">757-257-3053</a> or online at <a href="http://callpsychicnow.com/" target="_blank" style="color:var(--light-gold);">callpsychicnow.com</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY PSYCHIC READING -->
+<section id="why-reading">
+  <div class="container">
+    <h2>Why Psychic Norfolk Is the Best Psychic Reading &amp; Tarot Reading in Norfolk</h2>
+    <div class="divider"></div>
+    <div class="why-reading-inner">
+      
+      Why Wound Infection Psychic Reading is the wound Tarot Reading
+      <iframe src="https://callpsychicnownorfolk.blogspot.com/p/home.html
+
+
+" width="100%" height="600" frameborder="0"></iframe>
+      
+    <h2>Contact Information</h2>
+    <div class="divider"></div>
+    <p class="section-sub">Ready to get the clarity you deserve? Reach out to Psychic Norfolk today.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Get In Touch</h3>
+        <div class="contact-row">
+          <span class="icon">📍</span>
+          <div>
+            <p><strong style="color:var(--light-gold);">Address</strong></p>
+            <a href="https://www.google.com/maps?cid=16881233408042557387" target="_blank">440 Monticello Ave #1830<br>Norfolk, VA 23510</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span class="icon">📞</span>
+          <div>
+            <p><strong style="color:var(--light-gold);">Phone</strong></p>
+            <a href="tel:7572573053">757-257-3053</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span class="icon">🌐</span>
+          <div>
+            <p><strong style="color:var(--light-gold);">Website</strong></p>
+            <a href="http://callpsychicnow.com/" target="_blank">callpsychicnow.com</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span class="icon">📝</span>
+          <div>
+            <p><strong style="color:var(--light-gold);">Blog</strong></p>
+            <a href="https://callpsychicnownorfolk.blogspot.com/p/home.html" target="_blank">callpsychicnownorfolk.blogspot.com</a>
+          </div>
+        </div>
+        <div style="margin-top:28px;">
+          <a href="tel:7572573053" class="btn">📞 Call for a Reading</a>
+        </div>
+      </div>
+      <div>
+        <div class="map-wrapper">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.608259309034!2d-76.2881148!3d36.851856999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89ba9811f74bf37d%3A0xea46305810d55fcb!2sPsychic%20Norfolk!5e0!3m2!1sen!2s!4v1782703838548!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 <strong>Psychic Norfolk</strong> | 440 Monticello Ave #1830, Norfolk, VA 23510 | <a href="tel:7572573053">757-257-3053</a> | <a href="http://callpsychicnow.com/" target="_blank">callpsychicnow.com</a></p>
+  <p style="margin-top:8px;">Psychic Reading | Tarot Reading | Love Psychic | Relationship Psychic</p>
+</footer>
+
+</body>
+</html>
